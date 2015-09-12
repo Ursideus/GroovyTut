@@ -27,3 +27,12 @@ println z <=> z
 println z <=> x
 
 // -> Elvis operator
+class User {
+    String name
+}
+
+def user = new User()
+
+displayName = user.name ? user.name : 'Anonymous'
+// -> Instead use Elvis operator
+displayName = user.name ?: 'Anonymous'

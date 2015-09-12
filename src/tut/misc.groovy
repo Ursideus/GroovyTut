@@ -17,3 +17,13 @@ println dep?.boss?.name
 println emptyDep?.boss?.name
 
 
+// -> Spaceship operator
+def x = 3
+def y = 7
+def z = 11
+
+println x <=> y
+println z <=> z
+println z <=> x
+
+// -> Elvis operator

@@ -1,5 +1,6 @@
 package tut
 
+//-> Build XML
 def builder = new groovy.xml.MarkupBuilder()
 builder.people {       // create element
     person(id: 1) {    // create attribute
@@ -11,7 +12,7 @@ builder.people {       // create element
 }
 
 
-
+//-> Build JSON
 import groovy.json.*
 
 def jsonBuilder = new JsonBuilder()

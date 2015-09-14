@@ -10,7 +10,7 @@ expando.speak()
 
 class Dog {}
 
-Dog.metaClass.name = 'Phydeaux'  // Adds prop to metaClass
+Dog.metaClass.name = 'Phydeaux'    // Adds prop to metaClass
 Dog.metaClass.speak = { msg = 'woof' -> "$name says $msg" }  // Adds method to metaClass with default value
 Dog.metaClass.bark = { -> "$name says $msg" }  // Adds method to metaClass with no arguments
 

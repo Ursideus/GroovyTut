@@ -1,6 +1,11 @@
 package tut
 
 import groovy.json.*
+import groovy.swing.SwingBuilder
+
+import java.awt.GridLayout
+import javax.swing.ImageIcon
+import javax.swing.WindowConstant as WC
 
 String key = new File('flickr_key.txt').text
 String endPoint = 'https://api.flickr.com/services/rest?'
@@ -18,7 +23,11 @@ def queryStr = params.collect { it }.join('&')
 String jsonTxt = "$endPoint$queryStr".toURL().text
 
 // Write json to File
-File file = new File('cats.json')
+File file = new new File('cats.json')
 if (file) file.delete()
 file << JsonOutput.prettyPrint(jsonTxt)
 println JsonOutput.prettyPrint(jsonTxt)
+
+// parse JSON data and build picture url
+def json = JsonSlurper.parsText(jsonTxt)
+def photos = json.photos.photo

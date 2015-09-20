@@ -6,8 +6,8 @@ import groovy.transform.InharitConstructors
 import java.util.logging.Level
 
 // Extend the level type
-@InheritConstructors
-class CustomLevel extend Level {
+//@InheritConstructors
+class CustomLevel implements Level {
 }
 
 // the interception method
@@ -35,6 +35,6 @@ log.whatever 'whatever'
 Logger.metaClass.fyi = { msg -> delegate.info msg }
 Logger.metaClass.omg = { msg -> delegate.severe msg }
 
-Logger log = Logger.getLogger(this.calsss.name)
-log.fyi 'fyi message'
-log.omg 'omg message'
+Logger log1 = Logger.getLogger(this.calsss.name)
+log1.fyi 'fyi message'
+log1.omg 'omg message'

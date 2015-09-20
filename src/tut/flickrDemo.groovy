@@ -23,7 +23,7 @@ def queryStr = params.collect { it }.join('&')
 String jsonTxt = "$endPoint$queryStr".toURL().text
 
 // Write json to File
-File file = new new File('cats.json')
+File file = new File('cats.json')
 if (file) file.delete()
 file << JsonOutput.prettyPrint(jsonTxt)
 println JsonOutput.prettyPrint(jsonTxt)

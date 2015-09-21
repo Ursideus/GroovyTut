@@ -29,14 +29,14 @@ assert duck.speak() == 'I am Speaking'
 
 // resolve conflicts
 trait A {
-  String exec { 'A' }
+  String exec() { 'A' }
 }
 
 trait B {
-  String exec { 'B' }
+  String exec() { 'B' }
 }
 
-class C implements A, B {}
+class C implements A, B {}  // exec() == 'B'
 
 class D implements A, B {
   // override W/ custom implementation
